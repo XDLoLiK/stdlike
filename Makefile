@@ -1,7 +1,7 @@
-SRC_DIRS := . stdlike
+SRC_DIRS := .
 VPATH += $(SRC_DIRS)
 
-INC_DIRS := include
+INC_DIRS := .
 BIN_DIR := bin
 BUILD_DIR := build
 
