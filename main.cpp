@@ -1,4 +1,6 @@
 #include <stdlike/function.hpp>
+#include <stdlike/shared_ptr.hpp>
+#include <stdlike/weak_ptr.hpp>
 
 int Func(const int* x, int y) {
 	return (*x) + y;
@@ -19,7 +21,8 @@ int main() {
 	Foo foo;
 	f1(foo, 5);
 
-	stdlike::UniquePtr<Foo[]> test(new Foo[5]);
+	stdlike::SharedPtr<int> sptr(new int(5));
+	stdlike::WeakPtr<int> wptr(sptr);
 
 	return 0;
 }

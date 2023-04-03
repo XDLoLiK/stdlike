@@ -1,5 +1,5 @@
-#ifndef STDLIKE_UNIQUE_PTR_HPP
-#define STDLIKE_UNIQUE_PTR_HPP
+#ifndef STDLIKE_UTILITY_HPP
+#define STDLIKE_UTILITY_HPP
 
 namespace stdlike {
 
@@ -24,12 +24,12 @@ constexpr typename RemoveReference<Type>::type&& Move(Type&& arg) noexcept {
 }
 
 template <typename Type>
-constexpr Type&& forward(typename RemoveReference<Type>::type& arg) noexcept {
+constexpr Type&& Forward(typename RemoveReference<Type>::type& arg) noexcept {
     return static_cast<Type&&>(arg);
 }
 
 template <typename Type>
-constexpr Type&& forward(typename RemoveReference<Type>::type&& arg) noexcept {
+constexpr Type&& Forward(typename RemoveReference<Type>::type&& arg) noexcept {
     return static_cast<Type&&>(arg);
 }
 
@@ -40,6 +40,6 @@ void Swap(Type& lhs, Type& rhs) noexcept {
 	rhs = Move(lhs);
 }
 
-}
+} // namespace stdlike
 
-#endif // STDLIKE_UNIQUE_PTR_HPP
+#endif // STDLIKE_UTILITY_HPP
